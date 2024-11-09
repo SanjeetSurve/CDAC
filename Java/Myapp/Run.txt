@@ -1,0 +1,8 @@
+Current Directory:
+cd Myapp/
+
+Compile Command:
+javac -cp "lib/hospital.jar" -d bin src/Program.java
+
+Run Command:
+java -cp "lib/hospital.jar:bin" Program

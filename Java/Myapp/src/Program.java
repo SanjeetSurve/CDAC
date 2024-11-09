@@ -1,4 +1,3 @@
-
 import hospital.*;
 import java.util.Scanner;
 
