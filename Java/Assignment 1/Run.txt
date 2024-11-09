@@ -1,0 +1,7 @@
+Commands for Runing the code:
+
+Current Directory:
+cd Assignment1/
+
+Command to run the code:
+java -cp Demo/bin program
