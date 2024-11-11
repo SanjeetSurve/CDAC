@@ -1,16 +1,15 @@
 import Loans.*;
-import java.util.*;
+import java.util.Scanner;
 
 public class Program {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        
+
         Loan[] loans = new Loan[10];
         int loanCount = 0;
 
-
         while (true) {
-            System.out.println("Enter details for Loan " + (loanCount + 1) + ":");
+            System.out.println("Enter details for Loan " + (loanCount++) + ":");
 
             System.out.print("Enter Principal Amount: ");
             double principal = sc.nextDouble();
@@ -18,60 +17,34 @@ public class Program {
             System.out.print("Enter Loan Period (years): ");
             int period = sc.nextInt();
 
-            System.out.print("Enter Loan Type (1 for PersonalLoan, 2 for HomeLoan): ");
+            System.out.print("Enter Loan Type (1 for PersonalLoan, \n2 for HomeLoan): ");
             int loanType = sc.nextInt();
 
-            if (loanType == 1) {
-                loans[loanCount] = new PersonalLoan(principal, period);
-            } else if (loanType == 2) {
-                loans[loanCount] = new HomeLoan(principal, period);
-            } else {
+            try {
+                loans[loanCount] = LoanFactory.createLoan(loanType, principal, period);
+            } catch (IllegalArgumentException e) {
                 System.out.println("Invalid loan type selected. Defaulting to PersonalLoan.");
                 loans[loanCount] = new PersonalLoan(principal, period);
             }
-            loanCount++; 
+            loanCount++;
 
             System.out.print("Do you want to add another loan? (yes/no): ");
             String choice = sc.next();
 
             if (!choice.equalsIgnoreCase("yes")) {
-                break; 
+                break;
             }
         }
 
-        double totalEmi = 0;
-        double totalTax = 0;
-        double totalDiscount = 0;
+        double totalEmi = 0, totalTax = 0, totalDiscount = 0;
 
         for (int i = 0; i < loanCount; i++) {
             Loan loan = loans[i];
-            System.out.println();
-            System.out.println("Loan Amount: " + loan.getPrincipal());
-            System.out.println("Loan Type: " + loan.getClass().getSimpleName());
+            LoanFactory.printLoanDetails(loan);
 
-            float rate = loan.getRate();
-            double interestAmount = (loan.getPrincipal() * rate * loan.getPeriod()) / 100;
-            System.out.printf("Interest Rate: %.2f%%, \nInterest Amount: %.2f%n", rate, interestAmount);
-
-            double emi = loan.getEMI();
-            System.out.printf("EMI (per month): %.2f%n", emi);
-            totalEmi += emi;
-
-            if (loan instanceof Taxable) {
-                double tax = ((Taxable) loan).getTax();
-                System.out.printf("Tax Applicable: %.2f%n", tax);
-                totalTax += tax;
-                System.out.println("----------------------------------------------------------------");
-            }
-
-            if (loan instanceof Discountable) {
-                double discount = ((Discountable) loan).getDiscount();
-                System.out.printf("Discount Applicable: %.2f%n", discount);
-                totalDiscount += discount;
-                System.out.println("----------------------------------------------------------------");
-            }
-
-            System.out.println(); 
+            totalEmi += loan.getEMI();
+            if (loan instanceof Taxable taxable) totalTax += taxable.getTax();
+            if (loan instanceof Discountable discountable) totalDiscount += discountable.getDiscount();
         }
 
         System.out.printf("Total EMI for all loans: %.2f%n", totalEmi);
