@@ -1,0 +1,7 @@
+app/components/Taxable.class
+app/components/PersonalLoan.class
+app/components/Discountable.class
+app/components/Loan.class
+app/components/LoanFactory.class
+app/components/HomeLoan.class
+app/components/Program.class
