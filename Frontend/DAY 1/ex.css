@@ -1,0 +1,30 @@
+h1{
+    border: solid;    
+}
+.container{
+    border: solid;
+    width: 1200px;
+    margin: auto;
+    display: flex;
+
+}
+.col-6{
+    width: 50%;
+    font-size: 30px;
+    background-color: bisque;
+}
+.new{
+    border: solid;
+    width: 1200px;
+    margin: auto;
+    display: flex;
+}
+.col-3{
+    border: solid;
+    width: 25%;
+    font-size: 30px;
+    padding: 20px;
+}
+.col-3 img{
+    width: 100%;
+}
