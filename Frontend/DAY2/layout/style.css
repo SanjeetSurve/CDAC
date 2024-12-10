@@ -1,0 +1,34 @@
+header a{
+    color: gray !important;
+}
+
+header a:hover{
+    color: orangered !important;
+}
+
+@media only screen and (max-width:575px){
+    .logo-section .banner{
+        text-align: center !important;
+    }
+    .top-menu{
+        justify-content: center !important;
+        padding-top: 8px;
+    }
+    
+}
+
+footer{
+    background-color: white;
+}
+
+footer h4{
+    color: black !important;
+}
+
+footer a{
+    color: blue !important;
+}
+
+footer a:hover{
+    color: magenta !important;
+}

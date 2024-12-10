@@ -1,0 +1,90 @@
+<script>
+    "use strict"
+    let a = 10
+    console.log(a)
+    
+    console.log("Backtick");
+    
+    console.log(`
+    
+        hello world
+        hello world
+        ${a}
+    `);
+
+// Mod Operator
+    "use strict"
+    console.log("MOD Operator");
+    
+    console.log(30/2);
+    console.log(30%2);
+    
+    // Exponential Operator
+
+    console.log("Exponential Operator");
+    
+    console.log(2**4);
+    console.log(2**3);
+
+
+
+
+    // ROI
+    "use strict";
+    var p = 2500000
+    var n = 30
+    n = n*12
+    var r = 8.75
+    r = r / 12 / 100
+
+    // P X R X (1+R) ^ N/ [(1 + R)^ N - 1]
+    var EMI = p * r * (1+r) **n / ((1+r) ** n-1)
+    
+    console.log("EMI CALCULATED: ");
+    
+    console.log(EMI);
+
+
+    // Simple Interest
+    
+    // (P * R * N) / 100
+    var SI = (p * r * n) / 100
+
+    console.log(`
+Simple Interest
+${SI}`);
+    
+
+
+    var amt = 10000
+    var disc = 20
+
+    var op = amt - ((disc/ 100) * amt)
+
+    console.log(`
+        Discount Amount
+        ${op , amt}
+
+    `);
+
+
+    // Stock market average calculator
+    var u1 = 100
+    var u2 = 200
+
+    var r1 = 50
+    var r2 = 40
+
+
+    var re1 = ((u1*r1) + (u2 * r2)) / (u1+u2)
+
+    console.log(`
+    Total unit = ${u1+u2}
+    Average Price = ${re1}
+    Total Amount = ${(u1*r1)+(u2*r2) }
+    `)
+    
+    
+
+
+</script>
