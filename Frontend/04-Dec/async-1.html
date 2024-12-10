@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async-1</title>
+</head>
+<body>
+    <script>
+        function myFunction1(){
+            return[10,20,30];
+        }
+
+        var result = myFunction1();
+        console.log(result);
+
+        async function myFunction1() {
+            result[10,20,30];
+        }
+
+        var result = myFunction();
+        console.log(result);
+
+        result.then(val =>{
+            console.log(val);
+            
+        })
+        
+        
+    </script>
+</body>
+</html>

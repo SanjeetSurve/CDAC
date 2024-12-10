@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J-Query-5</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>API $.get</h1>
+    <input type="text" id="txt">
+    <button id="btn">GET DATA</button>
+
+    <div></div>
+
+    <script>
+        const api = 'https://fakestoreapi.com/products/'
+
+        $("#btn").click(function(){
+            var id = $("#txt").val();
+            console.log(id);
+
+            var API= api+id;
+            console.log(API);
+
+            $.get(API, function(res){
+                console.log(res);
+                
+                $("div").html(
+                `
+                    <img src = "${res.image}"/>
+                    <h2>${res.price}</h2>
+                    <p>${res.title}</p>
+                `
+                );
+                
+                
+            });
+            
+        });
+    </script>
+</body>
+</html>

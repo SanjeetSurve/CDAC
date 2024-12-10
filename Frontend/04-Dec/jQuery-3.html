@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J-Query-3</title>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <button id="btn1">Hide</button>
+    <button id="btn2">Show</button>
+
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi obcaecati distinctio doloremque quae perferendis! Nostrum exercitationem vel culpa reprehenderit pariatur!</p>
+
+    <script>
+        $("#btn1").click(function(){
+            $("p").slideUp(1200);
+        });
+
+        $("#btn2").click(function(){
+            $("p").fadeIn(1200);
+        });
+
+    </script>
+</body>
+</html>

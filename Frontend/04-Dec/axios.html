@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axios</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <button>Get Data</button>
+
+    <script>
+        document.querySelector('button').onclick = function(){
+            console.log(axios);
+
+            var result = axios.get('https://fakestoreapi.com/products');
+            console.log(result);
+
+            result.then(val =>{
+                console.log(val.data);
+                
+            }).catch(err =>{
+                console.log(err.message);
+                
+            });
+        }
+    </script>
+</body>
+</html>

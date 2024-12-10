@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J-Query-4</title>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <input type="text" id="txt1"> <br>
+    <input type="text" id="txt2"> <br>
+    
+    <button id="btn">Get</button>
+    
+    <p>....</p>
+
+    <script>
+        $("#btn").click(function(){
+            var data1 = $("#txt1").val();
+            var data2 = $("#txt2").val();
+
+            data1 = Number(data1);
+            data2 = Number(data2);
+
+            var msg = (data1 =="" || data2 == "")? "values Required" : (data1+data2);
+            $("p").html(msg);
+            
+        });
+    </script>
+
+    
+</body>
+</html>
