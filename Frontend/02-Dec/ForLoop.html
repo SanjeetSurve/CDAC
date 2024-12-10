@@ -1,0 +1,24 @@
+<script>
+    'use strict';
+    // x = 10;
+    // console.log(x);
+
+    var amt = 150000;
+    var roi = 7.1;
+    var Opbal = 0;
+
+    
+    for(let yr= 1; yr<= 2; yr++){
+        let interest  = (Opbal + amt) * roi / 100;
+        interest  =Math.round(interest);
+
+        let cBal = Opbal + amt + interest;
+        console.log("Opening Balance: ",Opbal);
+        console.log("Rate of Interest: ",roi);
+        console.log("Interest: ",interest);
+        console.log("Closing Balance: ",cBal);
+        cBal = Opbal;
+    }
+    // console.log("Year: ",yr);
+    
+</script>

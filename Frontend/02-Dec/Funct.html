@@ -1,0 +1,24 @@
+<script>
+    'use strict';
+
+    // Named Function
+    function myfun(a,b){
+        console.log("MY FUNCTION");
+        
+        console.log(a+b);
+        console.log(a-b);
+        console.log(a/b);
+    }
+    myfun(10,20);
+
+
+    // Un-Named Function / Anonymous Function
+
+    var f1 = function(p, r, t){
+        console.log("F1: ");
+        
+        let i = p*r*t / 100
+        console.log("Interest "+i);
+    }
+    f1(10000, 8, 20);
+</script>

@@ -1,0 +1,33 @@
+<script>
+    // Arrow instead of Function keyword
+    var f2 = () => {
+        console.log("F2: ");
+        
+        console.log(Math);
+        console.log(Math.random());
+        var d1 = Math.round(10 * Math.random());
+        var d2 = Math.round(10 * Math.random());
+
+        var record = `Enter ${d1} + ${d2}`;
+        console.log(record);
+
+        var result = prompt (record);
+        console.log(result);
+
+        if(result == (d1 + d2)){
+            document.write(`<h1>Valid DATA</h1>`);
+        }else{
+            document.write(`<h1>In-Valid DATA</h1>`);
+        }
+    }
+
+    console.log(f2(10));
+</script>
+
+<style>
+    h1{
+        text-align: center;
+        font-size: larger;
+        margin: auto;
+    }
+</style>

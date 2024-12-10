@@ -1,0 +1,68 @@
+<script>
+    'use strict';
+    var Product = [
+        {
+            path: 'img/2.jpeg',
+            name: 'Shirt',
+            price: 1000,
+        },
+        {
+            path: 'img/3.jpeg',
+            name: 'Trouser',
+            price: 2500,
+        },
+        {
+            path: 'img/4.jpeg',
+            name: 'T-Shirt',
+            price: 500,
+        },
+        {
+            path: 'img/6.jpeg',
+            name: 'Belt',
+            price: 3000,
+        }
+    ];
+    console.log("Product: "+Product);
+
+    document.write(`<h1>Products</h1>`);
+    Product.filter(function (value) {
+        console.log(value.price);
+
+    })
+
+    var ans = Product.filter((value)=> value.price > 1500 && value.price <= 3000)
+    console.log(ans);
+
+    var ans1 = Product.filter((val)=> val.price >= 1500 && val.price <= 3000)
+    console.log(ans1);
+    
+
+    Product.forEach(function (item){
+        document.write(`
+            <div>
+                <img src=${item.path}>
+                <h3>Name: ${item.name}</h3>
+                <h4>Name: ${item.price}</h4>
+            </div>
+        `);
+    })
+
+
+</script>
+<style>
+    h1 {
+        text-align: center;
+    }
+    div{
+        border: solid;
+        margin: 10px auto;
+        padding: 10px;
+        width: 300px;
+        text-align: center;
+    }
+    img{
+        width: 100%;
+        margin: auto;
+    }
+</style>
+

@@ -1,0 +1,38 @@
+<script>
+    // OBJECT = Struct (C++)
+    var product = {
+        name: 'Shrit',
+        price: 1000,
+        discount: 10,
+        path: "https://studentprojects.gteckannur.com/vishnuppddm3/wp-content/uploads/2024/06/men-plain-shirts-men-shirt.jpg",
+        size:['xs ', ' S ', ' M ', 'L ', 'XL ', 'XXL ', 'XXXL ']
+    };
+    console.log("Product: "+product);
+
+    document.writeln(`
+        <div>
+            <img src=${product.path}>
+            <p>${product.name}</p>
+            <h3>${product.size} </h3>
+            <h4>${product.price}</h4>
+            <button>Add TO Cart</button>
+
+        </div>
+    
+    `)
+</script>
+
+
+<style>
+    div{
+        border: solid; width: 300px;
+        text-align: center;
+        margin: auto;
+    }
+    img{
+        width: 100%;
+        margin: auto;
+    }
+</style>
+
+   
